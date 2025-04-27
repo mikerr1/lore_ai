@@ -1,9 +1,14 @@
+import os
+
 import gradio as gr
 import requests
 from langchain_community.vectorstores import Chroma
 from langchain_huggingface import HuggingFaceEmbeddings
 
 from settings import LORE_DB_DIR
+
+# Set the LLM model for chat
+LLM_MODEL = os.environ.get("LLM_MODEL")
 
 # Setup
 embedding_model = HuggingFaceEmbeddings(
